@@ -57,8 +57,8 @@ independiente y no guarda información sobre solicitudes
 anteriores. Utiliza TCP como su protocolo de transporte.
 
 ### Funcionamiento
-1. Cliente realiza una solicitud HTTP:
- - El cliente envía una solicitud HTTP al servidor. Esta
+#### 1. Cliente realiza una solicitud HTTP:
+El cliente envía una solicitud HTTP al servidor. Esta
 solicitud incluye un método HTTP, una URL, encabezados
 opcionales y, en algunos casos, un cuerpo de mensaje.
 
@@ -72,4 +72,40 @@ opcionales y, en algunos casos, un cuerpo de mensaje.
    5. PATCH: Envía datos parciales al servidor para
    modificar parcialmente un recurso.
 
- -
+#### 2. Servidor procesa la solicitud:
+ - El servidor recibe la solicitud, la procesa y toma una
+acción en función del método y los datos proporcionados.
+
+ - El servidor puede interactuar con bases de datos,
+archivos y otros servicios para obtener o modificar los
+datos solicitados.
+
+#### 3. Servidor envía una respuesta HTTP
+- El servidor envía una respuesta HTTP al cliente. Esta
+respuesta incluye un código de estado HTTP, encabezados
+opcionales y, en muchos casos, un cuerpo de mensaje.
+
+- Los códigos de estado HTTP indican el resultado de la
+solicitud:
+1. 200 OK: La solicitud fue exitosa.
+2. 201 Created: Un recurso fue creado exitosamente.
+3. 400 Bad Request: La solicitud no es válida.
+4. 401 Unauthorized: Autenticación requerida.
+5. 404 Not Found: El recurso solicitado no fue encontrado.
+6. 500 Internal Server Error: Error interno del servidor.
+
+### Comunicación entre Frontend y Backend mediante HTTP
+La comunicación entre un frontend (por ejemplo, una 
+aplicación web o móvil) y un backend (servidor) se realiza
+utilizando solicitudes y respuestas HTTP. Aquí hay un
+ejemplo de cómo funciona esta comunicación:
+
+#### Solicitud HTTP del Frontend:
+
+ - El usuario interactúa con la interfaz de usuario del
+frontend (por ejemplo, haciendo clic en un botón).
+
+ - El frontend envía una solicitud HTTP al backend. Por
+ejemplo, si el usuario quiere ver una lista de productos,
+el frontend puede enviar una solicitud GET a la URL
+/api/products.
